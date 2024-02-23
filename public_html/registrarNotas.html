@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/stylern.css">
+        <link rel="stylesheet" href="css/menu.css">
+    <title>registroN</title>
+</head>
+<body>
+  <header>  
+      <nav class="nav">
+  <ul class="nav__menu">
+    <li class="nav__menu-item"><a href="index.html" style="color:#f9f5f5;">INICIO</a></li>
+    <li class="nav__menu-item"><a>ADMIN</a>
+      <ul class="nav__submenu">
+         <li class="nav__submenu-item"> <a href="registroAdministrador.html" style="color:#f9f5f5;">Registrar</a></li>
+         <li class="nav__submenu-item"> <a href="actualizarAdministrador.html" style="color:#f9f5f5;">Actualizar</a></li>
+         <li class="nav__submenu-item"> <a href="eliminarAdministrador.html" style="color:#f9f5f5;">Eliminar</a></li>
+      </ul>
+    </li>
+    <li class="nav__menu-item"><a>ESTUDIANTE</a>
+      <ul class="nav__submenu">
+          <li class="nav__submenu-item"> <a href="registroEstudiante.html" style="color:#f9f5f5;">Matricular</a></li>
+        <li class="nav__submenu-item"> <a href="actualizarEstudiante.html" style="color:#f9f5f5;">Actualizar</a></li>
+        <li class="nav__submenu-item"> <a href="eliminarEstudiante.html" style="color:#f9f5f5;">Eliminar</a></li>
+      </ul>
+    </li>
+    <li class="nav__menu-item"><a>ACUDIENTE</a>
+      <ul class="nav__submenu">
+        <li class="nav__submenu-item"> <a href="registroAcudiente.html" style="color:#f9f5f5;">Registrar</a></li>
+        <li class="nav__submenu-item"> <a href="actualizarAcudiente.html" style="color:#f9f5f5;">Actualizar</a></li>
+        <li class="nav__submenu-item"> <a href="eliminarAcudiente.html" style="color:#f9f5f5;">Eliminar</a></li>
+      </ul>
+    </li>
+    <li class="nav__menu-item"><a>PROFESOR</a>
+      <ul class="nav__submenu">
+                 <li class="nav__submenu-item"> <a href="registroProfesor.html" style="color:#f9f5f5;">Registrar</a></li>
+         <li class="nav__submenu-item"> <a href="actualizarProfesor.html" style="color:#f9f5f5;">Actualizar</a></li>
+          <li class="nav__submenu-item"> <a href="eliminarProfesor.html" style="color:#f9f5f5;">Eliminar</a></li>
+      </ul>
+    </li>
+    <li class="nav__menu-item"><a>MATERIA</a>
+      <ul class="nav__submenu">
+   <li class="nav__submenu-item"> <a href="registroMateria.html" style="color:#f9f5f5;">Registrar</a></li>
+<li class="nav__submenu-item"> <a href="actualizarMateria.html" style="color:#f9f5f5;">Actualizar</a></li>
+        <li class="nav__submenu-item"> <a href="eliminarMateria.html" style="color:#f9f5f5;">Eliminar</a></li>
+      </ul>
+    </li>
+    <li class="nav__menu-item"><a>GRADO</a>
+      <ul class="nav__submenu">
+       <li class="nav__submenu-item"> <a href="registrarGrado.html" style="color:#f9f5f5;">Registrar</a></li>
+       <li class="nav__submenu-item"> <a href="actualizarGrado.html" style="color:#f9f5f5;">Actualizar</a></li>
+        <li class="nav__submenu-item"> <a href="eliminarGrado.html" style="color:#f9f5f5;">Eliminar</a></li>
+      </ul>
+    </li>
+    <li class="nav__menu-item"><a>NOTAS</a>
+      <ul class="nav__submenu">
+          <li class="nav__submenu-item"> <a href="registrarNotas.html" style="color:#f9f5f5;">Registrar</a></li>
+         <li class="nav__submenu-item"> <a href="eliminarNotas.html" style="color:#f9f5f5;">Eliminar</a></li>
+      </ul>
+    </li>
+    <li class="nav__menu-item"><a>REPORTES</a>
+      <ul class="nav__submenu">
+        <li class="nav__submenu-item"> <a href="boletinCalificaciones.html" style="color:#f9f5f5;">Boletín de calificaciones</a></li>
+         <li class="nav__submenu-item"> <a href="informeAcadémico.html" style="color:#f9f5f5;">Informe Académico</a></li>
+      </ul>
+    </li>
+   
+  </ul>
+</nav>
+    </header><br><br><br><br>
+       
+     <header>
+        <br>
+        <p><h2>Registro de notas</h2></p>
+        <hr size="3px" color="black">
+        <br>
+     </header><br>
+
+    
+
+        <table align="center">
+
+         <form name="form1">
+
+
+            <tr>
+                <td>Año escolar:</td>
+            </tr>
+
+            <tr>
+                <td><select  id="año">
+                    <option value="">Seleccione el año</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                    <option value="2020">2020</option>
+                </select></td>
+            </tr>
+
+            <tr>
+                <td>Periodo:</td>
+            </tr>
+
+            <tr>
+            <td><select  id="Periodo">
+                <option value="">Seleccione el periodo</option>
+                <option value="Primer periodo">Primer periodo</option>
+                <option value="Segundo periodo">Segundo periodo</option>
+            </select></td>
+            </tr>
+            
+            <tr>
+                <td>Grado:</td>
+            </tr>
+            
+            <tr>
+                <td><select id="grado">
+                    <option value="">Seleccionar grado</option>
+                    <option value="sexto">Sexto</option>
+                    <option value="septimo">Séptimo</option>
+                    <option value="octavo">Octavo</option>
+                    <option value="noveno">Noveno</option>
+                    <option value="decimo">Décimo</option>
+                    <option value="undecimo">Undécimo</option>
+                </select></td>
+            </tr>
+
+            <tr>
+                <td>Estudiante:</td>
+            </tr>
+
+            <tr>
+                <td><select  id="estudiante">
+                    <option value="">Selecciona el estudiante</option>
+                    <option value="estudiante 1">Estudiante 1</option>
+                    <option value="estudiante 2">Estudiante 2</option>
+                    <option value="estudiante 3">Estudiante 3</option>
+                </select></td>
+            </tr>
+
+            <tr>
+                <td>Docente:</td>
+            </tr>
+
+            <tr>
+                <td><select  id="Docente">
+                    <option value="">Seleccciona el docente</option>
+                    <option value="docente 1">Docente 1</option>
+                    <option value="docente 2">Docente 2</option>
+                    <option value="docente 3">Docente 3</option>
+                </select></td>
+            </tr>
+
+            <tr>
+                <td>Asignatura:</td>
+            </tr>
+
+            <tr>
+                <td><select  id="Asignatura">
+                    <option value="">Selecciona la asignatura</option>
+                    <option value="Matematicas">Matematicas</option>
+                    <option value="Fisica">Fisica</option>
+                    <option value="Quimica">Quimica</option>
+                </select></td>
+            </tr>
+
+            <table align="center"><br>
+                <br>
+
+                <tr>
+                    <td>N.saber</td>
+                    <td>N.Hacer</td>
+                    <td>N.ser</td>
+                    <td>N.final</td>
+                </tr>
+
+                <tr>
+                    <td><input type="text" id="saber"> </td>
+                    <td><input type="text" id="hacer" required></td>
+                    <td><input type="text" id="ser" required></td>
+                    <td><input type="text" id="final" ></td>
+                </tr>
+
+                <table align="center">
+
+                    <tr>
+                        <td><input type="submit" id="REGISTRAR" value="REGISTRAR" ></td>
+                        <td><input type="reset" id="LIMPIAR" value="LIMPIAR"></td>
+                    </tr>
+        
+
+                </table>
+
+            </table>
+        </form>
+    </table>
+
+
+
+
+     
+    
+</body>
+</html>

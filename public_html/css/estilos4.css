@@ -1,0 +1,85 @@
+body{
+
+font-family: arial;
+
+}
+
+.container {
+    width: 90%;
+    margin: 5%;
+}
+
+h3 {
+    margin: 0%;
+    padding: 0%;
+}
+
+hr {
+    border: none;
+    width: 95%;
+    height: 3px;
+    background-color: black;
+    margin: 0;
+}
+
+select {
+    width: 91%;
+}
+
+.formulario {
+    width: 100%;
+}
+ 
+ .colorEncabezado{
+     color: #fff;
+ }
+ .formtabla{
+     
+     width: 90%;
+     margin-top: 2rem;
+     border-collapse: collapse;
+    border: 2px solid black;
+    border-spacing: 5px;
+    
+ }
+ 
+ .td{
+    border: 1px solid black;
+    text-align: center;
+}
+.formtabla thead {
+    background-color: #43C338;
+    
+  }
+  
+  .formtabla tbody {
+    background-color: #fff;
+  }
+  
+ 
+
+input[type="submit"] {
+    width: 8em;
+    border-radius: 5px;
+    padding: .5rem;
+    margin: 2rem 18rem;
+    margin-block: 5rem;
+    background: #43C338;
+    color: white;
+    font-size: 14px;
+    box-shadow: 0px 0px 20px rgba(0,0,0,.5);
+    cursor: pointer;
+}
+
+input[type="reset"] {
+    width: 8em;
+    border-radius: 5px;
+    padding: .5rem;
+    margin-block: 2rem;
+    background: #43C338;
+    color: white;
+    font-size: 14px;
+    box-shadow: 0px 0px 20px rgba(0,0,0,.5);
+    cursor: pointer;
+    
+}

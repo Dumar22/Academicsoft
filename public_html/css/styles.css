@@ -1,0 +1,44 @@
+.container {
+    width: 90%;
+    margin: 5%;
+}
+
+h3 {
+    margin: 0%;
+    padding: 0%;
+}
+
+hr {
+    border: none;
+    width: 69rem;
+    height: 3px;
+    background-color: black;
+    margin: 0;
+}
+
+input {
+    width: 90%;
+}
+
+select {
+    width: 91%;
+}
+
+.formulario {
+    width: 100%;
+}
+
+button {
+    width: 10em;
+    border: none;
+    padding: .8rem;
+    margin-right: 3rem;
+    margin-block: 2rem;
+    background: #43C338;
+    color: white;
+}
+
+.btn1 {
+    background: #8592aa;
+    align-content: self-end;
+}

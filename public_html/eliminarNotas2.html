@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo24.css">
+        <link rel="stylesheet" href="css/menu.css">
+    <title>Eliminar notas</title>
+</head>
+<body>
+      <header>  
+      <nav class="nav">
+  <ul class="nav__menu">
+    <li class="nav__menu-item"><a href="index.html" style="color:#f9f5f5;">INICIO</a></li>
+    <li class="nav__menu-item"><a>ACADÉMICO</a>
+      <ul class="nav__submenu">
+         <li class="nav__submenu-item"> <a href="registrarNotas2.html" style="color:#f9f5f5;">Registrar notas</a></li>
+         <li class="nav__submenu-item"> <a href="eliminarNotas2.html" style="color:#f9f5f5;">Eliminar notas</a></li>
+      </ul>
+    </li>
+   
+  </ul>
+</nav>
+    </header>
+
+        <p><h2>Eliminar Notas</h2></p><br>
+        <hr size=3px color="black">
+
+      
+ 
+      <br>
+      <br><br><br>
+
+      <table1 align="center"><br>
+
+        <form name="formulario1"><br>
+            <br>
+
+            <tr>
+                <td><h4>AÑO ESCOLAR:</h4></td><br>
+            </tr>
+            
+
+            <tr>
+
+                <td><select  id="año">
+                    <option value="selecciona el año">selecciona el año</option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                </select></td><br><br>
+
+            
+
+
+            </tr>
+
+            <tr>
+                <td><h4>PERIODO:</h4></td><br>
+            </tr>
+
+            <tr>
+                <td><select id="periodo">
+                    <option value="seleccione el periodo">seleccione el periodo</option>
+                    <option value="primer periodo">primer periodo</option>
+                    <option value="segundo periodo">segundo periodo</option>
+                </select></td><br><br>
+
+
+            </tr>
+
+            <tr>
+                <td><h4>GRADO:</h4></td><br>
+            </tr>
+
+          <tr>
+            <td><select  id="grado">
+                <option value="seleccione el grado">seleccione el grado</option>
+                <option value="sexto">sexto</option>
+                <option value="septimo">septimo</option>
+                <option value="octavo">octavo</option>
+                <option value="noveno">noveno</option>
+                <option value="decimo">decimo</option>
+                <option value="once">undecimo</option>
+            </select></td><br><br>
+
+          </tr>
+
+          <tr>
+            <td><h4>ESTUDIANTE:</h4></td><br>
+          </tr>
+
+          <tr>
+
+            <td><select  id="estudiante">
+                <option value="">selecciona el estudiante</option>
+                <option value="estudiante 1">estudiante 1</option>
+                <option value="estudiante 2">estudiante 2</option>
+                <option value="estudiante 3">estudiante 3</option>
+            </select></td><br>
+          </tr>
+
+          
+
+
+          <table align="center"><br><br>
+
+            <tr>
+
+                <td><input type="text" id="asignatura" value="ASIGNATURA" disabled></td>
+                <td><input type="text" id="final" value="NOTA FINAL" disabled></td>
+                <td><input type="text" id="eliminar" value="ELIMINAR" disabled></td>
+
+
+            </tr>
+
+            <tr>
+                <td><input type="text" placeholder="Matemáticas "></td>
+                <td> <input type="text" placeholder="4.3"></td>
+                <td><input type="checkbox" id="chec1" ></td>
+                
+             </tr>
+
+             <tr>
+                <td><input type="text" placeholder="Inglés"></td>
+                <td> <input type="text" placeholder="2.6"></td>
+                <td><input type="checkbox" id="chec1" ></td>
+                
+             </tr>
+
+             <tr>
+                <td><input type="text" placeholder="Ciencias Naturales"></td>
+                <td> <input type="text" placeholder="3.6"></td>
+                <td><input type="checkbox" id="chec1" ></td>
+                
+             </tr>
+
+
+          </table>
+
+        </table>
+
+            
+
+        
+        <tr><br>
+            <td><input type="submit" id="ELIMINAR" value="ELIMINAR" ></td>
+            <td><input type="reset" id="LIMPIAR" value="LIMPIAR"></td>
+
+
+        </tr>
+
+       
+
+    </table>    
+
+
+
+
+
+
+     </form>
+
+
+
+      </table>
+
+      
+</body>
+</html>

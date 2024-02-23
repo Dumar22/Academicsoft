@@ -1,0 +1,149 @@
+body{
+
+    font-family: arial;
+    
+    }
+    
+    
+    
+    
+    nav ul{
+    
+    
+      
+        list-style: none;
+        padding: 0;
+       
+    
+    
+    
+    }
+    
+    nav li{
+    
+        line-height: 4rem;
+        position: relative;
+    }
+    
+    nav li  :hover{
+    
+        background-color: 434343;
+    
+    
+    }
+    
+    nav li ul{
+    
+        position: absolute;
+    }
+    nav a {
+        color: ghostwhite;
+        display: block;
+        padding: 0 2.5em;
+        text-decoration: none;
+        transition: .5s;
+        
+    
+    }
+    
+    nav ul :hover{
+    
+        background: rgba(0,0,0,.3);
+    }
+    
+    nav li ul {
+    
+        display: none;
+    }
+    
+    nav li:hover > ul{
+    
+        display: block;
+    }
+    
+    nav > ul {
+    
+    
+        background: green;
+        display: table;
+        width: 96%;
+    }    
+    
+    
+    nav > ul > li {
+        float: left;
+    }
+    
+    nav li li {
+    
+        background: green;
+    }
+    
+    
+    .container {
+        width: 90%;
+        margin: 5%;
+    }
+    
+    h3 {
+        margin: 0%;
+        padding: 0%;
+    }
+    
+    hr {
+        border: none;
+        width: 78rem;
+        height: 3px;
+        background-color: black;
+        margin: 0;
+    }
+    
+    input {
+        width: 90%;
+       border-radius: 5px;
+      font-size: 120%;
+      cursor: pointer;
+      box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.552);
+    
+    }
+    
+    select {
+        width: 91%;
+    }
+    
+    .formulario {
+        width: 100%;
+    }
+    
+    input[type="submit"] {
+        width: 7em;
+        border-radius: 5px;
+        padding: .5rem;
+        margin-right: 3rem;
+        margin-block: 1rem;
+        background: green;
+        color: white;
+        font-size: 14px;
+        box-shadow: 0px 0px 20px rgba(0,0,0,.5);
+        cursor: pointer;
+    }
+    
+    input[type="reset"] {
+        width: 7em;
+        border-radius: 5px;
+        padding: .5rem;
+        margin-right: 3rem;
+        margin-block: 2rem;
+        background: green;
+        color: white;
+        font-size: 14px;
+        box-shadow: 0px 0px 20px rgba(0,0,0,.5);
+        cursor: pointer;
+        
+    }
+    
+    
+        
+    
+    
+

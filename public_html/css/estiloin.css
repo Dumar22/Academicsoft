@@ -1,0 +1,86 @@
+body{
+
+    font-family: arial;
+    
+}
+    
+.container {
+        width: 90%;
+        margin: 5%;
+}
+    
+h3 {
+        margin: 0%;
+        padding: 0%;
+}
+    
+hr {
+        border: none;
+        width: 95%;
+        height: 3px;
+        background-color: black;
+        margin: 0;
+}
+    
+     
+table{
+         width: 90%;
+         margin-top: 2rem;
+         border-collapse: collapse;
+         border-spacing: 5px;
+         margin-bottom: 2rem;
+}
+th {
+        background-color: #ccc;
+}
+      
+table tbody {
+        background-color: #fff;
+}
+table{
+       table-layout: auto;
+       width: auto;
+       margin-bottom: auto;
+       margin-right: auto;
+       margin-top: auto;
+       text-align: center;
+}
+    
+th, td {
+       border: none;
+       word-wrap: break-word;
+       width: auto;
+}      
+td {
+    white-space: nowrap;
+    vertical-align: center;
+    margin-right: auto;
+    position: relative;
+}
+select {
+        width: 91%;
+}
+#button {
+      width: 8em;
+      border-radius: 5px;
+      padding: .5rem;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-block: 2rem;
+      color: white;
+      background-color: RGB(67, 195, 56);
+      font-size: 14px;
+      box-shadow: 0px 0px 20px RGB(223, 223, 223);
+      cursor: pointer;
+}
+#Informe {
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+#Escudo {
+display: block;
+margin-left: auto;
+margin-right: auto;
+}

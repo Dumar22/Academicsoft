@@ -1,0 +1,29 @@
+  
+        body{
+            font-family: arial;
+            }
+                table, th, td{
+                    border: 1px solid black;
+                    border-collapse: collapse;
+                    position: relative;
+                    top: 0px;
+                }
+                th {
+                    background-color: rgb(226, 219, 219);
+                }
+                td{
+                    padding: 1px;
+                    position: relative;
+                    left: 10px;
+                }
+                hr {
+                    width: 30%;
+                    text-align: left;
+                    margin-left: 0;
+                    margin-top: 0;
+                }
+                .icon{
+                    color: rgb(86, 197, 248);
+                    position: relative;
+                    left: 32px;
+                }

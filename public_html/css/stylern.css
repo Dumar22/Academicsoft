@@ -1,0 +1,95 @@
+
+
+    td{
+
+        font-size: 1em; 
+    }
+    
+    hr{
+        height: 3px;
+        margin-top: 44px;
+        transform: translate 50% 50%;
+        width: 60%;
+        left: 20%;
+
+    }
+    
+    h2{
+
+        position: absolute;
+        left: 20%;
+        top: 19%;
+        transform: translate 50% 50%;
+
+    }
+
+h4{
+    font-weight: normal;
+    position: absolute;
+    left: 16%;
+    margin-top: 0px;
+}
+
+
+option{
+
+    width: 20%;
+}
+
+
+    input {
+
+        font-size: 14px;
+        cursor: pointer;
+        color: black;
+        border-radius: 10px;
+        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+        width: 6em;
+        width: 35%;
+        padding: 0.5rem;
+    }
+
+    
+
+input[type="submit"] {
+    width: 7em;
+    border-radius: 5px;
+    padding: .3rem;
+    margin-right: 3rem;
+    margin-block: 1rem;
+    background: #43C338;;
+    color: black;
+    font-size: 14px;
+    box-shadow: 0px 0px 20px rgba(0,0,0,.5);
+    cursor: pointer;
+
+
+}
+
+input[type="reset"] {
+    width: 8em;
+    border-radius: 5px;
+    padding: .3rem;
+    margin-right: 3rem;
+    margin-block: 2rem;
+    background: #43C338;;
+    color: black;
+    font-size: 14px;
+    box-shadow: 0px 0px 20px rgba(0,0,0,.5);
+    cursor: pointer;
+    
+}
+
+    select{
+
+        width: 55rem;
+        height: 30px;
+        font-size: 15px;
+        border-radius: 10px;
+        cursor: pointer;
+        margin-top: 5px;
+        background-color:white;
+        
+    }
+
+   

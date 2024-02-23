@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css">
+      <link rel="stylesheet" href="css/menu.css">
+    <title>Administrador</title>
+</head>
+   <body>
+         <header>  
+      <nav class="nav">
+  <ul class="nav__menu">
+    <li class="nav__menu-item"><a href="index.html" style="color:#f9f5f5;">INICIO</a></li>
+    <li class="nav__menu-item"><a>ADMIN</a>
+      <ul class="nav__submenu">
+         <li class="nav__submenu-item"> <a href="registroAdministrador.html" style="color:#f9f5f5;">Registrar</a></li>
+         <li class="nav__submenu-item"> <a href="actualizarAdministrador.html" style="color:#f9f5f5;">Actualizar</a></li>
+         <li class="nav__submenu-item"> <a href="eliminarAdministrador.html" style="color:#f9f5f5;">Eliminar</a></li>
+      </ul>
+    </li>
+    <li class="nav__menu-item"><a>ESTUDIANTE</a>
+      <ul class="nav__submenu">
+          <li class="nav__submenu-item"> <a href="registroEstudiante.html" style="color:#f9f5f5;">Matricular</a></li>
+        <li class="nav__submenu-item"> <a href="actualizarEstudiante.html" style="color:#f9f5f5;">Actualizar</a></li>
+        <li class="nav__submenu-item"> <a href="eliminarEstudiante.html" style="color:#f9f5f5;">Eliminar</a></li>
+      </ul>
+    </li>
+    <li class="nav__menu-item"><a>ACUDIENTE</a>
+      <ul class="nav__submenu">
+        <li class="nav__submenu-item"> <a href="registroAcudiente.html" style="color:#f9f5f5;">Registrar</a></li>
+        <li class="nav__submenu-item"> <a href="actualizarAcudiente.html" style="color:#f9f5f5;">Actualizar</a></li>
+        <li class="nav__submenu-item"> <a href="eliminarAcudiente.html" style="color:#f9f5f5;">Eliminar</a></li>
+      </ul>
+    </li>
+    <li class="nav__menu-item"><a>PROFESOR</a>
+      <ul class="nav__submenu">
+                 <li class="nav__submenu-item"> <a href="registroProfesor.html" style="color:#f9f5f5;">Registrar</a></li>
+         <li class="nav__submenu-item"> <a href="actualizarProfesor.html" style="color:#f9f5f5;">Actualizar</a></li>
+          <li class="nav__submenu-item"> <a href="eliminarProfesor.html" style="color:#f9f5f5;">Eliminar</a></li>
+      </ul>
+    </li>
+    <li class="nav__menu-item"><a>MATERIA</a>
+      <ul class="nav__submenu">
+   <li class="nav__submenu-item"> <a href="registroMateria.html" style="color:#f9f5f5;">Registrar</a></li>
+<li class="nav__submenu-item"> <a href="actualizarMateria.html" style="color:#f9f5f5;">Actualizar</a></li>
+        <li class="nav__submenu-item"> <a href="eliminarMateria.html" style="color:#f9f5f5;">Eliminar</a></li>
+      </ul>
+    </li>
+    <li class="nav__menu-item"><a>GRADO</a>
+      <ul class="nav__submenu">
+       <li class="nav__submenu-item"> <a href="registroGrado.html" style="color:#f9f5f5;">Registrar</a></li>
+       <li class="nav__submenu-item"> <a href="actualizarGrado.html" style="color:#f9f5f5;">Actualizar</a></li>
+        <li class="nav__submenu-item"> <a href="eliminarGrado.html" style="color:#f9f5f5;">Eliminar</a></li>
+      </ul>
+    </li>
+    <li class="nav__menu-item"><a>NOTAS</a>
+      <ul class="nav__submenu">
+          <li class="nav__submenu-item"> <a href="registrarNotas.html" style="color:#f9f5f5;">Registrar</a></li>
+         <li class="nav__submenu-item"> <a href="eliminarNotas.html" style="color:#f9f5f5;">Eliminar</a></li>
+      </ul>
+    </li>
+    <li class="nav__menu-item"><a>REPORTES</a>
+      <ul class="nav__submenu">
+        <li class="nav__submenu-item"> <a href="boletinCalificaciones.html" style="color:#f9f5f5;">Boletín de calificaciones</a></li>
+         <li class="nav__submenu-item"> <a href="informeAcadémico.html" style="color:#f9f5f5;">Informe Académico</a></li>
+      </ul>
+    </li>
+   
+  </ul>
+</nav>
+    </header>
+
+<body>
+    <div class="container">
+    <header>
+        <h2>Actualización de datos de profesores</h2>
+        <p><h3>Digite el número de indentificación para buscar profesor</h3></p>
+        <hr size="2px" color="black"><br>
+    </header>
+    <table class="formulario" align="center">
+        <form action=>
+            <tr>
+                <td>N.identificación: </td>
+                <td>Teléfono: </td>
+            </tr>
+            <tr>
+                <td><input type="text" id="identificacion" placeholder="Ingrese la identificación del profesor" required></td>
+                 <td><input type="text" id="administrador"></td>
+            </tr>
+            <tr>
+                <td>Nombres: </td>
+                <td>Correo electrónico: </td>
+            </tr>
+            <td><input type="search" id="Nombres" required></td>
+            <td><input type="text" id="Usuarios"></td>
+            <tr>
+              <td>Apellidos: </td>
+              <td>Contraseña: </td>
+            </tr>
+                <td><input type="search" id="Apellidos" required></td>
+                <td><input type="password" id="Contraseña" required></td>
+            <tr>
+                <td>Dirección: </td>
+                <td>Comprobar contraseña: </td>
+            </tr>
+            <tr>
+                <td><input type="text" id="correo" ></td>
+                <td><input type="password" id="Comprobar" required></td>
+            </tr> 
+                <table align="center">
+            <tr>
+                <td><input type="submit" value="ACTUALIZAR"></td>
+                <td><input type="reset" value="LIMPIAR"></td>
+            </tr>
+            </table>  
+        </form>
+    </table>
+    
+</div> 
+</body>
+</html>
