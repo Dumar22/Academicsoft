@@ -1,0 +1,245 @@
+.n-index{
+  background-color: #85c550;
+  padding: 0;
+  margin: 0;
+}
+
+
+.c-login{      
+    min-width: 100vw;
+    min-height: 100vh;
+    padding: 5% 0;   
+    align-items: none;   
+    background: url("../assets/Fondo-login.svg"); 
+    background-size: cover;
+    background-position: center;    
+}
+
+.c-welcome{      
+    min-width: 100vw;   
+   min-height: 45vh;           
+    background-color: #022D60;  
+    color: #fff;
+  
+}
+
+
+.login-content{   
+    background: rgba(0, 0, 0, 0.5);
+    width: 90vw;    
+    height:50%;
+    color: #f1f1f1;
+    padding: 8% 10%;
+    }
+
+    .c-content{   
+        position: fixed;
+        background: rgba(0, 0, 0, 0.5);
+        width: 75vw;    
+        height:50vh;
+        margin: 5% -38%;   
+        }
+
+ .c-content img{           
+            margin:250px -12%;
+            width:  80vw;  
+        }
+
+.login-title img {
+    position: absolute;
+    margin:-13.5% -20%;
+    width: 40%;   	
+  }
+.login-label-input{   
+    width: 95%;
+    margin-left: 3%;
+    font-size: 20px;
+}
+
+.login-label-input .form-control{
+background: transparent;
+border: none;
+border-bottom: 2px solid #f1f1f1;
+}
+
+.login-label-input .form-control:focus {
+	box-shadow: none;	
+	border-bottom: 2px solid #920000;
+	background: #fff;
+	transition: all .2s;	
+}
+
+.login-label-input .form-control:focus + label {
+	color: #000428;
+    top: -5px;	
+    font-size: 18px;	
+}
+
+.login-label-input .form-control:not(:placeholder-shown) {
+    color: #000428;    
+    background-color: #FFFFFF;
+}
+
+
+.btn{
+    width: 77%;
+    margin-left: 12%;
+}
+
+.btn:hover{
+	background-color: #f1f1f1;	
+	text-decoration: none;
+	color: #000428;
+}
+
+.btn-home{
+  width: 100%;
+  margin: 0;
+  background-color: #85c550;
+  font-size: medium;
+  border: none;
+  border-bottom: 1px solid #f1f1f1;
+}
+.btn-home:hover{
+  background-color: transparent;	
+  text-decoration: none;
+  border-bottom: 2px solid #050505;
+  color: #0e0ba7;
+}
+
+.btn-footer{
+  padding: 0;
+  margin: 0;
+}
+
+.showcase {
+  position: static;
+}
+
+.bg-image {  
+  height: 15vh;  
+}
+
+.bg-img-title {
+  position: absolute;
+  top: 420px;
+  left: 20px;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #007bff;
+  color: #fff;
+}
+
+ .modal-content {
+    background-color: rgba(0, 0, 0, 0.482); 
+    color: #fff;
+  }
+  
+.btn-modal{
+    background:transparent;
+    width: 20%;
+    border: none;
+    border-bottom: 1px solid  #f1f1f1;
+    margin-bottom: 5%;
+}
+.nav-container{
+    background: #000000;
+}
+
+.nav-img{
+	background: #021b60;
+    margin: -1% 5% -1% -2%;
+}
+/* .dropdown-item{
+    color: #f1f1f1;
+} */
+.nav-item .nav-link{
+    color: #ffffff;
+}
+.nav-item:hover{
+    background-color: #ffffff;  
+}
+.nav-item .nav-link:hover{
+    color: #000000;
+}
+.exit{
+    color: rgb(241, 12, 12);
+}
+.container-info-user{
+	padding: 0 25px 0 25px;
+	margin-top: 0;
+	color: #080000;	
+  }
+
+  .dataTables_wrapper .dataTables_info{
+    color: #f1f1f1;
+  }
+  .dataTables_wrapper .dataTables_length select{
+    color: #f1f1f1;
+  }
+  .pagination li{    
+    background-color:transparent;
+  }
+  .pagination a{    
+    color: #fff;
+  }
+  
+  .page-item:last-child  {
+    color: #fff;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  @media (min-width: 800px) {
+
+  
+    .container .c-login{
+        align-items: center;
+        min-height: 100vh;
+        padding:0 40%;
+    }
+
+    .login-content{
+        width: 60vw;   
+     }
+
+     .login-title img {
+        position: absolute;
+        margin:-11% -20%;
+        width: 40%;   
+        
+      } 
+      .c-welcome{
+        min-height: 65vh;
+      }  
+
+      .c-content{
+        height:65vh;
+      }
+
+      .c-content img{
+       
+            margin:10% -5%;
+            width:  70vw;  
+        }
+    
+  }
+
+ 
+
