@@ -5,7 +5,7 @@
 
 require_once './config/App.php';
 require_once './autoload.php';
-require_once './views/inc/Sesion_start.php';
+require_once '../src/views/inc/Sesion_start.php';
 
 
 if (isset($_GET['views'])) {
