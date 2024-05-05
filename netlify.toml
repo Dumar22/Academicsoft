@@ -1,4 +1,0 @@
-[[redirects]]
-from = "/"
-to = "./academicsoft/src/"
-status = 200
