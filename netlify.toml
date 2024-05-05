@@ -1,4 +1,4 @@
 [[redirects]]
-from = "/*"
-to = "https://academicsoft.netlify.app/src/"
+from = "/"
+to = "https://academicsoft.netlify.app/src/login"
 status = 200
