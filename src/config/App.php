@@ -1,6 +1,6 @@
 <?php
 
-const SERVER_URL="http://localhost/academicsoft/";
+const SERVER_URL="https://academicsoft.netlify.app/";
 
 const COMPANY="ACADEMICSOFT";
 
