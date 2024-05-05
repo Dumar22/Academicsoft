@@ -5,7 +5,7 @@ namespace models;
 class viewsModel{
 /*------ Obtener Vistas del Modelo -------*/   
 protected static function get_views_model($view){    
-    $whiteList=["dashboard","list-user-admin","list-estudents", "logOut","user-profile"];
+    $whiteList=["dashboard","list-user-admin","edit-user-admin","list-estudents", "logOut","user-profile"];
 
     if (in_array($view, $whiteList)) {
         if (is_file("./views/contents/".$view."-view.php")) {

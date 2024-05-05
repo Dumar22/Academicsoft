@@ -16,13 +16,6 @@ if (isset($_GET['views'])) {
 
 ?>
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-	<?php require_once "./views/inc/Head.php"; ?>
-</head>
-<body>
-    
 <?php
    use controllers\viewsController;
    use controllers\loginController;
@@ -36,25 +29,6 @@ if (isset($_GET['views'])) {
   
    if ($view == "login" || $view == "404") {
        require_once "./views/contents/" . $view . "-view.php";
-   } else {
-
-     # Proteje rutas si quiere ingresar por url #
-     # Cierra sesión #
-     if((!isset($_SESSION['id']) || $_SESSION['id']=="") || (!isset($_SESSION['usuario']) || $_SESSION['usuario']=="")){
-        $instLogin->cerrarSesionControlador();
-        exit();
-      }
-
-    require_once "./views/inc/Navbar.php";
-    require_once "./views/inc/Container-info-user.php";    
-       require_once $view;
-       
-   }
-
-
-require_once "./views/inc/Script.php";
-
-?>
-</body>
-</html>
-
+   } 
+   ?>
+  

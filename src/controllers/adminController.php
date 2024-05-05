@@ -68,7 +68,7 @@
 		        exit();
 		    }
 
-		    if($this->verifyData("[a-zA-Z0-9$@.-]{7,100}",$clave1) || $this->verifyData("[a-zA-Z0-9$@.-]{7,100}",$clave2)){
+		    if($this->verifyData("[a-zA-Z0-9$@.-]{7,100}",$clave1) ){
 		    	$alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
@@ -79,45 +79,35 @@
 		        exit();
 		    }
 
-		    # Verificando email #
-			if ($email != "") {
-				if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-					$result = $this->executeQuery("SELECT usuario_email FROM usuarios WHERE usuario_email = '$email'");
-					if ($result === false) {
-						
-						// Hubo un error al ejecutar la consulta
-						$alerta = [
-							"tipo" => "simple",
-							"titulo" => "Ocurrió un error inesperado",
-							"texto" => "Ocurrió un error al verificar el correo electrónico. Por favor, inténtelo de nuevo más tarde.",
-							"icono" => "error"
+			# Verificando email #
+		    if($email!=""){
+				if(filter_var($email, FILTER_VALIDATE_EMAIL)){
+					$check_email=$this->executeQuery("SELECT usuario_email FROM usuarios WHERE usuario_email='$email'");
+					if($check_email->rowCount()>0){
+						$alerta=[
+							"tipo"=>"simple",
+							"titulo"=>"Ocurrió un error inesperado",
+							"texto"=>"El EMAIL que acaba de ingresar ya se encuentra registrado en el sistema, por favor verifique e intente nuevamente",
+							"icono"=>"error"
 						];
 						return json_encode($alerta);
-					} elseif ($result->rowCount() > 0) {
-						// El correo electrónico ya está registrado
-						$alerta = [
-							"tipo" => "simple",
-							"titulo" => "Ocurrió un error inesperado",
-							"texto" => "El correo electrónico que acaba de ingresar ya se encuentra registrado en el sistema, por favor verifique e intente nuevamente.",
-							"icono" => "error"
-						];
-						return json_encode($alerta);
+						exit();
 					}
-				} else {
-					// El correo electrónico no es válido
-					$alerta = [
-						"tipo" => "simple",
-						"titulo" => "Ocurrió un error inesperado",
-						"texto" => "Ha ingresado un correo electrónico no válido.",
-						"icono" => "error"
+				}else{
+					$alerta=[
+						"tipo"=>"simple",
+						"titulo"=>"Ocurrió un error inesperado",
+						"texto"=>"Ha ingresado un correo electrónico no valido",
+						"icono"=>"error"
 					];
 					return json_encode($alerta);
+					exit();
 				}
-			}
+            }
 			
 
             # Verificando claves #
-            if($clave1!=$clave2){
+            if($clave1 != $clave2){
 				$alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
@@ -127,7 +117,7 @@
 				return json_encode($alerta);
 				exit();
 			}else{
-				$clave=password_hash($clave1,PASSWORD_BCRYPT,["cost"=>10]);
+				$clave = password_hash($clave1,PASSWORD_BCRYPT,["cost"=>10]);
             }
 
             # Verificando usuario #
@@ -396,16 +386,17 @@
 							<td>'.date("d-m-Y  h:i:s A",strtotime($rows['usuario_creado'])).'</td>
 							<td>'.date("d-m-Y  h:i:s A",strtotime($rows['usuario_actualizado'])).'</td>
 							
-			                <td>
-			                    <a href="'.SERVER_URL.'userUpdate/'.$rows['usuario_id'].'/" class="button is-success is-rounded is-small">Actualizar</a>
-			                </td>
+							<td>					
+							
+							 <a href="'.SERVER_URL.'src/edit-user-admin/'.$rows['usuario_id'].'/" class="btn btn-warning ">Actualizar</a>
+						</td>
 			                <td>
 			                	<form class="FormularioAjax" action="'.SERVER_URL.'src/ajax/userAdminAjax.php" method="POST" autocomplete="off" >
 
 			                		<input type="hidden" name="modulo_usuario" value="eliminar">
 			                		<input type="hidden" name="usuario_id" value="'.$rows['usuario_id'].'">
 
-			                    	<button type="submit" class="button is-danger is-rounded is-small">Eliminar</button>
+			                    	<button type="submit" class="btn btn-danger">Eliminar</button>
 			                    </form>
 			                </td>
 						</tr>
@@ -436,7 +427,7 @@
 			}
 
 			$tabla.='</tbody></table>';
-
+			 
 			### Paginacion ###
 			if($total>0 && $pagina<=$numeroPaginas){
 				$tabla.='<p class="has-text-right">Mostrando usuarios <strong>'.$pag_inicio.'</strong> al <strong>'.$pag_final.'</strong> de un <strong>total de '.$total.'</strong></p>';
@@ -449,74 +440,71 @@
 
 
 		/*----------  Controlador eliminar usuario  ----------*/
-		public function eliminarUsuarioControlador(){
-
-			$id=$this->cleanQuery($_POST['usuario_id']);
-
-			if($id==1){
-				$alerta=[
-					"tipo"=>"simple",
-					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"No podemos eliminar el usuario principal del sistema",
-					"icono"=>"error"
+		public function eliminarUsuarioControlador() {
+			$id = $this->cleanQuery($_POST['usuario_id']);
+		
+			// Verificar si es el usuario principal
+			if ($id == 1) {
+				$alerta = [
+					"tipo" => "simple",
+					"titulo" => "Ocurrió un error inesperado",
+					"texto" => "No podemos eliminar el usuario principal del sistema",
+					"icono" => "error"
 				];
 				return json_encode($alerta);
-		        exit();
 			}
-
-			# Verificando usuario #
-		    $datos=$this->executeQuery("SELECT * FROM usuarios WHERE usuario_id='$id'");
-			var_dump($datos);
-		    if($datos->rowCount()<=0){
-		        $alerta=[
-					"tipo"=>"simple",
-					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"No hemos encontrado el usuario en el sistema",
-					"icono"=>"error"
+		
+			// Verificar si existe el usuario
+			$datos = $this->executeQuery(" SELECT * FROM usuarios WHERE usuario_id = $id ");
+			
+			if ($datos->rowCount() <= 0) {
+				$alerta = [
+					"tipo" => "simple",
+					"titulo" => "Ocurrió un error inesperado",
+					"texto" => "No hemos encontrado el usuario en el sistema",
+					"icono" => "error"
 				];
 				return json_encode($alerta);
-		        exit();
-		    }else{
-		    	$datos=$datos->fetch();
-		    }
-
-		    $eliminarUsuario=$this->deleteData("usuarios","usuario_id",$id);
-
-		    if($eliminarUsuario->rowCount()==1){
-
-		    	if(is_file("../views/fotos/".$datos['usuario_foto'])){
-		            chmod("../views/fotos/".$datos['usuario_foto'],0777);
-		            unlink("../views/fotos/".$datos['usuario_foto']);
-		        }
-
-		        $alerta=[
-					"tipo"=>"recargar",
-					"titulo"=>"Usuario eliminado",
-					"texto"=>"El usuario ".$datos['usuario_nombre']." ".$datos['usuario_apellido']." ha sido eliminado del sistema correctamente",
-					"icono"=>"success"
+			}
+			$datos = $datos->fetch();
+		
+			// Intentar eliminar el usuario
+			$eliminarUsuario = $this->deleteData("usuarios", "usuario_id", $id);
+		
+			// Procesar el resultado de la eliminación
+			if ($eliminarUsuario->rowCount() >= 1) {
+				// Eliminar la foto del usuario, si existe
+				if (is_file("../views/fotos/" . $datos['usuario_foto'])) {
+					chmod("../views/fotos/" . $datos['usuario_foto'], 0777);
+					unlink("../views/fotos/" . $datos['usuario_foto']);
+				}
+		
+				$alerta = [
+					"tipo" => "recargar",
+					"titulo" => "Usuario eliminado",
+					"texto" => "El usuario " . $datos['usuario_nombre'] . " " . $datos['usuario_apellido'] . " ha sido eliminado del sistema correctamente",
+					"icono" => "success"
 				];
-
-		    }else{
-
-		    	$alerta=[
-					"tipo"=>"simple",
-					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"No hemos podido eliminar el usuario ".$datos['usuario_nombre']." ".$datos['usuario_apellido']." del sistema, por favor intente nuevamente",
-					"icono"=>"error"
+			} else {
+				$alerta = [
+					"tipo" => "simple",
+					"titulo" => "Ocurrió un error inesperado",
+					"texto" => "No hemos podido eliminar el usuario " . $datos['usuario_nombre'] . " " . $datos['usuario_apellido'] . " del sistema, por favor intente nuevamente",
+					"icono" => "error"
 				];
-		    }
-
-		    return json_encode($alerta);
+			}
+		
+			return json_encode($alerta);
 		}
 
-
+		
 		/*----------  Controlador actualizar usuario  ----------*/
 		public function actualizarUsuarioControlador(){
 
 			$id=$this->cleanQuery($_POST['usuario_id']);
 
 			# Verificando usuario #
-		    $datos=$this->executeQuery("SELECT * FROM usuario WHERE usuario_id='$id'");
+		    $datos=$this->executeQuery("SELECT * FROM usuarios WHERE usuario_id='$id'");
 		    if($datos->rowCount()<=0){
 		        $alerta=[
 					"tipo"=>"simple",

@@ -33,7 +33,7 @@ formularios_ajax.forEach(formularios => {
                     body: data
                 };
 
-                fetch(action, config)
+                
                 fetch(action,config)
                 .then(respuesta => respuesta.json())
                 .then(respuesta =>{ 
@@ -82,7 +82,7 @@ function alertas_ajax(alerta){
             if(result.isConfirmed){
                 document.querySelector(".FormularioAjax").reset();
                 $("#agregarUsuarioModal").modal('hide');
-                
+                window.location.reload();
                
             }
         });
@@ -95,26 +95,29 @@ function alertas_ajax(alerta){
 
 
 /* Boton cerrar sesion */
-let btn_exit=document.getElementById("btn_exit");
+document.addEventListener("DOMContentLoaded", function() {
+    /* Boton cerrar sesion */
+    let btn_exit = document.getElementById("btn_exit");
 
-btn_exit.addEventListener("click", function(e){
+    if (btn_exit) {
+        btn_exit.addEventListener("click", function(e) {
+            e.preventDefault();
 
-    e.preventDefault();
-    
-    Swal.fire({
-        title: '¿Quieres salir del sistema?',
-        text: "La sesión actual se cerrará y saldrás del sistema",
-        icon: 'question',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Si, salir',
-        cancelButtonText: 'Cancelar'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            let url=this.getAttribute("href");
-            window.location.href=url;
-        }
-    });
-
+            Swal.fire({
+                title: '¿Quieres salir del sistema?',
+                text: "La sesión actual se cerrará y saldrás del sistema",
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Si, salir',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    let url = this.getAttribute("href");
+                    window.location.href = url;
+                }
+            });
+        });
+    }
 });

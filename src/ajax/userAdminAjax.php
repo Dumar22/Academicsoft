@@ -30,6 +30,8 @@
 		if($_POST['modulo_usuario']=="actualizarFoto"){
 			echo $insUsuario->actualizarFotoUsuarioControlador();
 		}
+		
+		
 
 		
 	}else{
