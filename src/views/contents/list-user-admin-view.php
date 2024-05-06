@@ -1,5 +1,5 @@
    <!-- Lista de Usuarios -->
-   <div class="container c-welcome d-flex justify-content-center">
+   <div class="c-welcome d-flex justify-content-start">
 
 
 <div class="container">
@@ -11,9 +11,7 @@
   <?php require_once "./views/contents/add-user-admin-view.php"; ?>
  
   
-  <div class="container">
-
-<div class="form-rest mb-6 mt-6"></div>
+  
 
 <?php
   use controllers\adminController;

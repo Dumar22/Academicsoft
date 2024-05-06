@@ -349,21 +349,20 @@
 			$numeroPaginas =ceil($total/$registros);
 
 			$tabla.='
-		        
+			<div class="table-responsive">
 		        <table class="table table-bordered table-hover">
 		            <thead>
 		                <tr class="table-primary">
-		                    <th class="col">Identificación</th>
-		                    <th class="col">Nombres</th>
-		                    <th class="col">Apellidos</th>
-		                    <th class="col">Dirección</th>
-		                    <th class="col">Usuario</th>
-		                    <th class="col">Correo</th>
-		                    <th class="col">Teléfono</th>
-		                    <th class="col">Creado</th>
-		                    <th class="col">Actualizado</th>
-		                    <th class="col">Editar</th>
-                            <th class="col">Eliminar</th>
+		                    <th class=" col text-center">Identificación</th>
+		                    <th class=" col text-center">Nombre Completo</th>
+		                    <th class=" col text-center">Dirección</th>
+		                    <th class=" col text-center">Usuario</th>
+		                    <th class=" col text-center">Correo</th>
+		                    <th class=" col text-center">Teléfono</th>
+		                    <th class=" col text-center">Creado</th>
+		                    <th class=" col text-center">Actualizado</th>
+		                    <th class=" col text-center">Editar</th>
+                            <th class=" col text-center">Eliminar</th>
 		                </tr>
 		            </thead>
 		            <tbody>
@@ -376,15 +375,14 @@
 					$tabla.='
 						<tr class="has-text-centered" >
 						     <!-- <td>'.$contador.'</td> -->
-							<td>'.$rows['usuario_identificacion'].'</td>
-							<td>'.$rows['usuario_nombre'].'</td>
-							<td>'.$rows['usuario_apellido'].'</td>
-							<td>'.$rows['usuario_direccion'].'</td>
-							<td>'.$rows['usuario_usuario'].'</td>
-							<td>'.$rows['usuario_email'].'</td>
-							<td>'.$rows['usuario_telefono'].'</td>
-							<td>'.date("d-m-Y  h:i:s A",strtotime($rows['usuario_creado'])).'</td>
-							<td>'.date("d-m-Y  h:i:s A",strtotime($rows['usuario_actualizado'])).'</td>
+							<td class="text-nowrap">'.$rows['usuario_identificacion'].'</td>
+							<td class="text-nowrap">' . $rows['usuario_nombre'] . ' ' . $rows['usuario_apellido'] . '</td>
+							<td class="text-nowrap">'.$rows['usuario_direccion'].'</td>
+							<td class="text-nowrap">'.$rows['usuario_usuario'].'</td>
+							<td class="text-nowrap">'.$rows['usuario_email'].'</td>
+							<td class="text-nowrap">'.$rows['usuario_telefono'].'</td>
+							<td class="text-nowrap">'.date("d-m-Y  h:i:s A",strtotime($rows['usuario_creado'])).'</td>
+							<td class="text-nowrap">'.date("d-m-Y  h:i:s A",strtotime($rows['usuario_actualizado'])).'</td>
 							
 							<td>					
 							
@@ -426,7 +424,7 @@
 				}
 			}
 
-			$tabla.='</tbody></table>';
+			$tabla.='</tbody></table></div>';
 			 
 			### Paginacion ###
 			if($total>0 && $pagina<=$numeroPaginas){
