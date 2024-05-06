@@ -1,13 +1,13 @@
 <?php
-	
-	
 	namespace models;
 	use \PDO, PDOException, Exception;
+	
 
 	if(file_exists(__DIR__."/../config/server.php")){
 		require_once __DIR__."/../config/server.php";
 	}
 
+	
 	class mainModel{
 
 		private $server=SERVER;
@@ -19,22 +19,30 @@
 		/*----------  Funcion conectar a BD  ----------*/
 		protected function conect(){
 			try {
-				$connection = new PDO("mysql:host=" . $this->server . ";dbname=" . $this->db, $this->user, $this->pass);
+				$connection = new PDO("mysql:host=" . $this->server . ";port=" . DB_PORT . ";dbname=" . $this->db, $this->user, $this->pass);
+				$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				$connection->exec("SET CHARACTER SET utf8");
 				return $connection;
 			} catch (PDOException $e) {
-				// Manejar el error de conexión
-				$this->handleConnectionError($e);
-				return null;
+				$errorJson = $this->handleConnectionError($e);
+				header('Content-Type: application/json');
+				echo $errorJson;
+				exit;
 			}
 		}
 
 
 		protected function handleConnectionError($exception) {
-			// Aquí puedes implementar la lógica para manejar el error de conexión
-			// Por ejemplo, puedes registrar el error en un archivo de log, mostrar un mensaje de error al usuario, etc.
-			error_log("Error de conexión a la base de datos: " . $exception->getMessage());
-			// Puedes lanzar una excepción personalizada si lo necesitas
+			
+			$error = [
+				'message' => "Error de conexión a la base de datos: " . $exception->getMessage(),
+				'code' => $exception->getCode(),
+				'file' => $exception->getFile(),
+				'line' => $exception->getLine()
+			];
+		
+			return json_encode($error);
+			// lanzar una excepción personalizada si lo necesitas
 			throw new Exception("Error de conexión a la base de datos");
 		}
 		/*----------  Funcion ejecutar consultas  ----------*/

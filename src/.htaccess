@@ -1,0 +1,7 @@
+
+# Activar el motor de reescritura de URL
+RewriteEngine On
+#es una directiva que indica al servidor web que no debe mostrar un índice de directorio
+Options All -Indexes
+#regla de reescritura de URL que indica al servidor web cómo manejar las solicitudes de URL que contienen caracteres alfanuméricos
+RewriteRule ^([a-zA-Z0-9/ñÑ-]+)$ index.php?views=$1 [L,QSA]

@@ -5,7 +5,7 @@
 
 require_once './config/App.php';
 require_once './autoload.php';
-
+require_once '../src/views/inc/Sesion_start.php';
 
 
 if (isset($_GET['views'])) {
@@ -40,10 +40,10 @@ if (isset($_GET['views'])) {
 
      # Proteje rutas si quiere ingresar por url #
      # Cierra sesión #
-     if((!isset($_SESSION['id']) || $_SESSION['id']=="") || (!isset($_SESSION['usuario']) || $_SESSION['usuario']=="")){
-        $instLogin->cerrarSesionControlador();
-        exit();
-      }
+    //  if((!isset($_SESSION['id']) || $_SESSION['id']=="") || (!isset($_SESSION['usuario']) || $_SESSION['usuario']=="")){
+    //     $instLogin->cerrarSesionControlador();
+    //     exit();
+    //   }
 
     require_once "./views/inc/Navbar.php";
     require_once "./views/inc/Container-info-user.php";    

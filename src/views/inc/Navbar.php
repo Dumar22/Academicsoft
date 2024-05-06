@@ -27,11 +27,11 @@
             id="navbarDropdownMenuLink" role="button" aria-expanded="false">
             <?php 
             
-            if(is_file("./views/fotos/".$_SESSION['foto'])){
-              echo '<img class="rounded-circle" height="50" alt="Avatar" src="'.SERVER_URL.'src/views/fotos/'.$_SESSION['foto'].'">';
-            }else{
-              echo '<img class="rounded-circle" height="50" alt="Avatar" src="https://mdbootstrap.com/img/new/avatars/2.jpg">';
-            }
+            // if(is_file("./views/fotos/".$_SESSION['foto'])){
+            //   echo '<img class="rounded-circle" height="50" alt="Avatar" src="'.SERVER_URL.'src/views/fotos/'.$_SESSION['foto'].'">';
+            // }else{
+            //   echo '<img class="rounded-circle" height="50" alt="Avatar" src="https://mdbootstrap.com/img/new/avatars/2.jpg">';
+            // }
             ?>
             <!-- <img src="https://mdbootstrap.com/img/new/avatars/2.jpg" class="rounded-circle" height="50" alt="Avatar"
               /> -->
