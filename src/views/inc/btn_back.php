@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-start pt-4 pb-4">
-    <a href="#" class="btn btn-primary btn-modal"><i class="bi bi-arrow-left"></i> Regresar atrás</a>
+    <a href="#" class="btn btn-primary btn-back btn-modal"><i class="bi bi-arrow-left"></i> Regresar atrás</a>
 </div>
 
 <script type="text/javascript">

@@ -18,7 +18,7 @@
 				     	     <input type="password" class="form-control" id="floatingPassword" name="login_clave" pattern="[a-zA-Z0-9$@.-]{7,100}" maxlength="100" required="" placeholder="">
 				    	     <label for="floatingPassword"><i class="fas fa-lock"></i>&nbsp; Contraseña</label>
 				          </div>
-				          <button type="submit" class="btn btn-secondary text-center">LOG IN</button>
+				          <button type="submit" class="btn-log btn btn-secondary text-center">LOG IN</button>
 			       </form>             
 		     </div>		
         
