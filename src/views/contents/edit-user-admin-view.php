@@ -24,8 +24,7 @@
         include "./views/inc/btn_back.php";
 
         $datos = $instLogin->selectedData("Unico", "usuarios", "usuario_id", $id);
-        var_dump($datos);
-
+       
         if ($datos->rowCount() == 1) {
             $datos = $datos->fetch();
         ?>

@@ -7,19 +7,25 @@
 		require_once __DIR__."/../config/server.php";
 	}
 
-	
+	const SERVER="roundhouse.proxy.rlwy.net";
+	const DB_NAME="railway";
+	const DB_USER="root";
+	const DB_PASS="nYcaOMxrboReQeXzysXtrTrqpqFnqGAJ";
+	const DB_PORT="54913";
+
 	class mainModel{
 
 		private $server=SERVER;
 		private $db=DB_NAME;
 		private $user=DB_USER;
 		private $pass=DB_PASS;
+		private $port=DB_PORT;
 
 
 		/*----------  Funcion conectar a BD  ----------*/
 		protected function conect(){
 			try {
-				$connection = new PDO("mysql:host=" . $this->server . ";port=" . DB_PORT . ";dbname=" . $this->db, $this->user, $this->pass);
+				$connection = new PDO("mysql:host=" . $this->server . ";port=" . $this->port . ";dbname=" . $this->db, $this->user, $this->pass);
 				$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				$connection->exec("SET CHARACTER SET utf8");
 				return $connection;
