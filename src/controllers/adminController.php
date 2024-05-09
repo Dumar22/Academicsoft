@@ -194,16 +194,16 @@
 		        chmod($img_dir,0777);
 
 		        # Moviendo imagen al directorio #
-		        if(!move_uploaded_file($_FILES['usuario_foto']['tmp_name'],$img_dir.$foto)){
-		        	$alerta=[
-						"tipo"=>"simple",
-						"titulo"=>"Ocurrió un error inesperado",
-						"texto"=>"No podemos subir la imagen al sistema en este momento",
-						"icono"=>"error"
-					];
-					return json_encode($alerta);
-		            exit();
-		        }
+		        // if(!move_uploaded_file($_FILES['usuario_foto']['tmp_name'],$img_dir.$foto)){
+		        // 	$alerta=[
+				// 		"tipo"=>"simple",
+				// 		"titulo"=>"Ocurrió un error inesperado",
+				// 		"texto"=>"No podemos subir la imagen al sistema en este momento",
+				// 		"icono"=>"error"
+				// 	];
+				// 	return json_encode($alerta);
+		        //     exit();
+		        // }
 
     		}else{
     			$foto="";
