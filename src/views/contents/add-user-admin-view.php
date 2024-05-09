@@ -65,7 +65,7 @@
              </div>
              <div class="form-group">
                <label for="foto">Foto de perfil:</label>
-               <input type="file" class="form-control" name="usuario_foto" accept="image/jpeg, image/png" required>
+               <input type="file" class="form-control" name="usuario_foto" accept="image/jpg, image/jpeg, image/png" >
                <small class="form-text text-danger">Formatos permitidos: JPG, JPEG, PNG. Tamaño máximo: 5MB</small>
              </div>
              <button type="reset" class="btn btn-info mt-4">Limpiar</button>
