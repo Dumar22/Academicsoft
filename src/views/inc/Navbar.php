@@ -47,16 +47,16 @@
             <a class="nav-link" href="<?php echo SERVER_URL; ?>src/list-user-admin/">Usuarios</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo SERVER_URL; ?>src/list-estudents/">Estudiantes</a>
+            <a class="nav-link" href="<?php echo SERVER_URL; ?>src/list-students/">Estudiantes</a>
           </li> 
           <li class="nav-item">
-            <a class="nav-link" href="#">Acudientes</a>
+            <a class="nav-link" href="<?php echo SERVER_URL; ?>src/list-guardians/">Acudientes</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Profesores</a>
+            <a class="nav-link" href="<?php echo SERVER_URL; ?>src/list-teachers/">Profesores</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Materia</a>
+            <a class="nav-link" href="<?php echo SERVER_URL; ?>src/list-materias/">Materia</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Grado</a>

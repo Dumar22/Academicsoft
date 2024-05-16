@@ -33,7 +33,6 @@ formularios_ajax.forEach(formularios => {
                     body: data
                 };
 
-                
                 fetch(action,config)
                 .then(respuesta => respuesta.json())
                 .then(respuesta =>{ 
