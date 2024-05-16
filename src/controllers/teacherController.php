@@ -439,17 +439,6 @@
 		public function eliminarProfesorControlador() {
 			$id = $this->cleanQuery($_POST['profesor_id']);
 		
-			// Verificar si es el profesor principal
-			if ($id == 1) {
-				$alerta = [
-					"tipo" => "simple",
-					"titulo" => "Ocurrió un error inesperado",
-					"texto" => "No podemos eliminar el profesor principal del sistema",
-					"icono" => "error"
-				];
-				return json_encode($alerta);
-			}
-		
 			// Verificar si existe el profesor
 			$datos = $this->executeQuery(" SELECT * FROM profesores WHERE profesor_id = $id ");
 			

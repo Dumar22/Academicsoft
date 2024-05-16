@@ -3,20 +3,16 @@
    namespace controllers; 
 	use models\mainModel;
 
-	class materiasController extends mainModel{
+	class gradesController extends mainModel{
 
 		/*----------  Controlador registrar usuario  ----------*/
-		public function registrarMateriaControlador(){
+		public function registrarGradoControlador(){
 
 			# Almacenando datos#
-		    $nombre=$this->cleanQuery($_POST['materia_nombre']);
-		    $ih=$this->cleanQuery($_POST['materia_intensidad_horaria']);
-
-		    
-
+		    $nombre=$this->cleanQuery($_POST['grado_nombre']);  
 
 		    # Verificando campos obligatorios #
-		    if($nombre=="" || $ih==""){
+		    if($nombre==""){
 		    	$alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
@@ -27,42 +23,24 @@
 		        exit();
 		    }
 
-		    # Verificando integridad de los datos #
-		    if($this->verifyData("[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{3,40}",$nombre)){
-		    	$alerta=[
-					"tipo"=>"simple",
-					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"El NOMBRE no coincide con el formato solicitado",
-					"icono"=>"error"
-				];
-				return json_encode($alerta);
-		        exit();
-		    }
 
-		  
-
-
-		    $materia_datos_reg=[
+		    $grado_datos_reg=[
 			
 				[
-					"campo_nombre"=>"materia_nombre",
+					"campo_nombre"=>"grado_nombre",
 					"campo_marcador"=>":Nombre",
 					"campo_valor"=>$nombre
-				],
-				[
-					"campo_nombre"=>"materia_intensidad_horaria",
-					"campo_marcador"=>":Intensidad horaria",
-					"campo_valor"=>$ih
-                ]
+				]
+				
                 ];
 
-			$registrar_materia=$this->saveData("materias",$materia_datos_reg);
+			$registrar_grado=$this->saveData("grados",$grado_datos_reg);
 
-			if($registrar_materia->rowCount()==1){
+			if($registrar_grado->rowCount()==1){
 				$alerta=[
 					"tipo"=>"limpiar",
-					"titulo"=>"materia registrada",
-					"texto"=>"La materia ".$nombre." "." se registro con exito",
+					"titulo"=>"grado registrada",
+					"texto"=>"El grado ".$nombre." "." se registro con exito",
 					"icono"=>"success"
 				];
 				return json_encode($alerta);
@@ -72,7 +50,7 @@
 				$alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"No se pudo registrar la materia, por favor intente nuevamente",
+					"texto"=>"No se pudo registrar el grado, por favor intente nuevamente",
 					"icono"=>"error"
 				];
 				return json_encode($alerta);
@@ -84,7 +62,7 @@
 		}
 
 		/*----------  Controlador listar usuario  ----------*/
-		public function listarMateriaControlador($pagina,$registros,$url,$busqueda){
+		public function listarGradoControlador($pagina,$registros,$url,$busqueda){
 
 			$pagina=$this->cleanQuery($pagina);
 			$registros=$this->cleanQuery($registros);
@@ -101,15 +79,15 @@
 			$inicio = ($pagina>0) ? (($pagina * $registros)-$registros) : 0;
 
 			if(isset($busqueda) && $busqueda!=""){
-				$consulta_datos="SELECT * FROM materias WHERE ((materia_id!='".$_SESSION['id']."' AND materia_id!='0') AND (materia_nombre LIKE '%$busqueda%')) ORDER BY materia_nombre ASC LIMIT $inicio,$registros";
+				$consulta_datos="SELECT * FROM grados WHERE ((grado_id!='".$_SESSION['id']."' AND grado_id!='0') AND (grado_nombre LIKE '%$busqueda%')) ORDER BY grado_nombre ASC LIMIT $inicio,$registros";
 
-				$consulta_total="SELECT COUNT(materia_id) FROM materias WHERE ((materia_id!='".$_SESSION['id']."' AND materia_id!='0') AND (materia_nombre LIKE '%$busqueda%'))";
+				$consulta_total="SELECT COUNT(grado_id) FROM grados WHERE ((grado_id!='".$_SESSION['id']."' AND grado_id!='0') AND (grado_nombre LIKE '%$busqueda%'))";
 
 			}else{
 
-				$consulta_datos="SELECT * FROM materias WHERE materia_id!='".$_SESSION['id']."' AND materia_id!='0' ORDER BY materia_nombre ASC LIMIT $inicio,$registros";
+				$consulta_datos="SELECT * FROM grados WHERE grado_id!='".$_SESSION['id']."' AND grado_id!='0' ORDER BY grado_nombre ASC LIMIT $inicio,$registros";
 
-				$consulta_total="SELECT COUNT(materia_id) FROM materias WHERE materia_id!='".$_SESSION['id']."' AND materia_id!='0'";
+				$consulta_total="SELECT COUNT(grado_id) FROM grados WHERE grado_id!='".$_SESSION['id']."' AND grado_id!='0'";
 
 			}
 
@@ -129,8 +107,7 @@
 		        <table class="table table-bordered table-hover">
 		            <thead>
 		                <tr class="table-primary">
-                        <th class=" col text-center">Nombre Completo</th>
-                        <th class=" col text-center">Intensidad horaria</th>
+                        <th class=" col text-center">Grado</th>                        
 		                    <th class=" col text-center">Editar</th>
                             <th class=" col text-center">Eliminar</th>
 		                </tr>
@@ -145,17 +122,17 @@
 					$tabla.='
 						<tr class="has-text-centered" >
 						     <!-- <td>'.$contador.'</td> -->
-							<td class="text-nowrap">'.$rows['materia_nombre'].'</td>
-							<td class="text-nowrap">'.$rows['materia_intensidad_horaria'].'</td>							
+							<td class="text-nowrap">'.$rows['grado_nombre'].'</td>
+														
 							<td>					
 							
-							 <a href="'.SERVER_URL.'src/edit-materia/'.$rows['materia_id'].'/" class="btn btn-warning ">Actualizar</a>
+							 <a href="'.SERVER_URL.'src/edit-grade/'.$rows['grado_id'].'/" class="btn btn-warning ">Actualizar</a>
 						</td>
 			                <td>
-			                	<form class="FormularioAjax" action="'.SERVER_URL.'src/ajax/userMateriasAjax.php" method="POST" autocomplete="off" >
+			                	<form class="FormularioAjax" action="'.SERVER_URL.'src/ajax/userGradeAjax.php" method="POST" autocomplete="off" >
 
-			                		<input type="hidden" name="modulo_materia" value="eliminar">
-			                		<input type="hidden" name="materia_id" value="'.$rows['materia_id'].'">
+			                		<input type="hidden" name="modulo_grado" value="eliminar">
+			                		<input type="hidden" name="grado_id" value="'.$rows['grado_id'].'">
 
 			                    	<button type="submit" class="btn btn-danger">Eliminar</button>
 			                    </form>
@@ -191,7 +168,7 @@
 			 
 			### Paginacion ###
 			if($total>0 && $pagina<=$numeroPaginas){
-				$tabla.='<p class="has-text-right">Mostrando materias <strong>'.$pag_inicio.'</strong> al <strong>'.$pag_final.'</strong> de un <strong>total de '.$total.'</strong></p>';
+				$tabla.='<p class="has-text-right">Mostrando grados <strong>'.$pag_inicio.'</strong> al <strong>'.$pag_final.'</strong> de un <strong>total de '.$total.'</strong></p>';
 
 				$tabla.=$this->paginadorBootstrapp($pagina,$numeroPaginas,$url,7);
 			}
@@ -201,42 +178,42 @@
 
 
 		/*----------  Controlador eliminar usuario  ----------*/
-		public function eliminarMateriaControlador() {
-			$id = $this->cleanQuery($_POST['materia_id']);
+		public function eliminarGradoControlador() {
+			$id = $this->cleanQuery($_POST['grado_id']);
 		
-			// Verificar si existe el materia
-			$datos = $this->executeQuery(" SELECT * FROM materias WHERE materia_id = $id ");
+			// Verificar si existe el grado
+			$datos = $this->executeQuery(" SELECT * FROM grados WHERE grado_id = $id ");
 			
 			if ($datos->rowCount() <= 0) {
 				$alerta = [
 					"tipo" => "simple",
 					"titulo" => "Ocurrió un error inesperado",
-					"texto" => "No hemos encontrado la materia en el sistema",
+					"texto" => "No hemos encontrado la grado en el sistema",
 					"icono" => "error"
 				];
 				return json_encode($alerta);
 			}
 			$datos = $datos->fetch();
 		
-			// Intentar eliminar el materia
-			$eliminarMateria = $this->deleteData("materias", "materia_id", $id);
+			// Intentar eliminar el grado
+			$eliminarGrado = $this->deleteData("grados", "grado_id", $id);
 		
 			// Procesar el resultado de la eliminación
-			if ($eliminarMateria->rowCount() >= 1) {
+			if ($eliminarGrado->rowCount() >= 1) {
 				// Eliminar la foto del materia, si existe
 				
 		
 				$alerta = [
 					"tipo" => "recargar",
-					"titulo" => "materia eliminada",
-					"texto" => "La materia " . $datos['materia_nombre'] . " " . "ha sido eliminado del sistema correctamente",
+					"titulo" => "grado eliminada",
+					"texto" => "El grado " . $datos['grado_nombre'] . " " . "ha sido eliminado del sistema correctamente",
 					"icono" => "success"
 				];
 			} else {
 				$alerta = [
 					"tipo" => "simple",
 					"titulo" => "Ocurrió un error inesperado",
-					"texto" => "No hemos podido eliminar la materia " . $datos['materia_nombre'] . " " . "del sistema, por favor intente nuevamente",
+					"texto" => "No hemos podido eliminar el grado " . $datos['grado_nombre'] . " " . "del sistema, por favor intente nuevamente",
 					"icono" => "error"
 				];
 			}
@@ -246,17 +223,17 @@
 
 		
 		/*----------  Controlador actualizar usuario  ----------*/
-		public function actualizarMateriaControlador(){
+		public function actualizarGradoControlador(){
 
-			$id=$this->cleanQuery($_POST['materia_id']);
+			$id=$this->cleanQuery($_POST['grado_id']);
 
-			# Verificando materia #
-		    $datos=$this->executeQuery("SELECT * FROM materias WHERE materia_id='$id'");
+			# Verificando grado #
+		    $datos=$this->executeQuery("SELECT * FROM grados WHERE grado_id='$id'");
 		    if($datos->rowCount()<=0){
 		        $alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"No hemos encontrado la materia en el sistema",
+					"texto"=>"No hemos encontrado el grado en el sistema",
 					"icono"=>"error"
 				];
 				return json_encode($alerta);
@@ -268,8 +245,7 @@
 		   
 
 			# Almacenando datos#
-		    $nombre=$this->cleanQuery($_POST['materia_nombre']);
-		    $ih=$this->cleanQuery($_POST['materia_intensidad_horaria']);
+		    $nombre=$this->cleanQuery($_POST['grado_nombre']);		   
 		    
 		    # Verificando campos obligatorios #
 		    if($nombre=="" ){
@@ -283,40 +259,23 @@
 		        exit();
 		    }
 
-		    # Verificando integridad de los datos #
-		    if($this->verifyData("[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{3,40}",$nombre)){
-		        $alerta=[
-					"tipo"=>"simple",
-					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"El NOMBRE no coincide con el formato solicitado",
-					"icono"=>"error"
-				];
-				return json_encode($alerta);
-		        exit();
-		    }
+		   
 
-		    
-
-            $materia_datos_up=[
+            $grado_datos_up=[
 				[
-					"campo_nombre"=>"materia_nombre",
+					"campo_nombre"=>"grado_nombre",
 					"campo_marcador"=>":Nombre",
 					"campo_valor"=>$nombre
-				],
-				[
-					"campo_nombre"=>"materia_intensidad_horaria",
-					"campo_marcador"=>":Intensidad",
-					"campo_valor"=>$ih
 				]				
 			];
 
 			$condicion=[
-				"condicion_campo"=>"materia_id",
+				"condicion_campo"=>"grado_id",
 				"condicion_marcador"=>":ID",
 				"condicion_valor"=>$id
 			];
 
-			if($this->updateData("materias",$materia_datos_up,$condicion)){
+			if($this->updateData("grados",$grado_datos_up,$condicion)){
 
 				if($id==$_SESSION['id']){
 					$_SESSION['nombre']=$nombre;
@@ -325,15 +284,15 @@
 
 				$alerta=[
 					"tipo"=>"recargar",
-					"titulo"=>"materia actualizada",
-					"texto"=>"Los datos de materia ".$datos['materia_nombre']." "."se actualizaron correctamente",
+					"titulo"=>"grado actualizada",
+					"texto"=>"Los datos del grado ".$datos['grado_nombre']." "."se actualizaron correctamente",
 					"icono"=>"success"
 				];
 			}else{
 				$alerta=[
 					"tipo"=>"simple",
 					"titulo"=>"Ocurrió un error inesperado",
-					"texto"=>"No hemos podido actualizar los datos del materia ".$datos['materia_nombre'].", por favor intente nuevamente",
+					"texto"=>"No hemos podido actualizar los datos del grado ".$datos['grado_nombre'].", por favor intente nuevamente",
 					"icono"=>"error"
 				];
 			}

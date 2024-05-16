@@ -13,6 +13,8 @@
          </div>
          <div class="modal-body">
 
+         
+
            <form class="FormularioAjax" action="<?php echo SERVER_URL ?>src/ajax/userStudentAjax.php" method="post" autocomplete="off" enctype="multipart/form-data">
 
              <input type="hidden" name="modulo_estudiante" value="registrar">
@@ -43,6 +45,8 @@
                  <option value="profesor">Profesor</option>
                </select>
              </div>
+             
+
              <div class="form-group">
                <label for="direccion">Dirección:</label>
                <input type="text" class="form-control" name="estudiante_direccion" pattern="[a-zA-Z0-9]+[a-zA-Z0-9,#\- ]{3,50}" maxlength="50" required>
@@ -65,7 +69,7 @@
              </div>
              <div class="form-group">
                <label for="foto">Foto de perfil:</label>
-               <input type="file" class="form-control" name="estudiante_foto" accept="image/jpg, image/jpeg, image/png" >
+               <input type="file" class="form-control" name="estudiante_foto" accept="image/jpg, image/jpeg, image/png">
                <small class="form-text text-danger">Formatos permitidos: JPG, JPEG, PNG. Tamaño máximo: 5MB</small>
              </div>
              <button type="reset" class="btn btn-info mt-4">Limpiar</button>

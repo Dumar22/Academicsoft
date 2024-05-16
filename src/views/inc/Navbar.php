@@ -59,7 +59,7 @@
             <a class="nav-link" href="<?php echo SERVER_URL; ?>src/list-materias/">Materia</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Grado</a>
+            <a class="nav-link" href="<?php echo SERVER_URL; ?>src/list-grades/">Grado</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Notas</a>
