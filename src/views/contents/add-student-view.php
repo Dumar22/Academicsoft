@@ -1,4 +1,12 @@
- <!-- Agregar estudiante -->
+<?php
+use models\mainModel;
+
+$mainModel = new mainModel();
+$acudientes = $mainModel->getAcudientes();
+$grados = $mainModel->getGrados();
+
+?>
+<!-- Agregar estudiante -->
  <div class="container">
    <button type="button" class="btn btn-primary btn-modal" data-bs-toggle="modal" data-bs-target="#agregarUsuarioModal">
      Agregar Estudiante
@@ -45,8 +53,17 @@
                  <option value="profesor">Profesor</option>
                </select>
              </div>
-             
-
+             <div class="form-group">
+              <label for="acudiente_id">Acudiente:</label>
+              <select class="form-control" name="acudiente_id" required>
+                <option value="">Selecciona un acudiente</option>
+                <?php foreach ($acudientes as $acudiente) { ?>
+                  <option value="<?php echo $acudiente['acudiente_id']; ?>">
+                    <?php echo $acudiente['acudiente_nombre']." ".$acudiente['acudiente_apellido']; ?>
+                  </option>
+                <?php } ?>
+              </select>
+            </div>
              <div class="form-group">
                <label for="direccion">Dirección:</label>
                <input type="text" class="form-control" name="estudiante_direccion" pattern="[a-zA-Z0-9]+[a-zA-Z0-9,#\- ]{3,50}" maxlength="50" required>
@@ -59,6 +76,17 @@
                <label for="telefono">Teléfono:</label>
                <input type="text" class="form-control" name="estudiante_telefono" pattern="[0-9]{5,20}" maxlength="40" required>
              </div>
+             <div class="form-group">
+              <label for="grado_id">Grado:</label>
+              <select class="form-control" name="grado_id" required>
+                <option value="">Selecciona un grado</option>
+                <?php foreach ($grados as $grado) { ?>
+                  <option value="<?php echo $grado['grado_id']; ?>">
+                    <?php echo $grado['grado_nombre']; ?>
+                  </option>
+                <?php } ?>
+              </select>
+            </div>
              <div class="form-group">
                <label for="telefono">Contraseña:</label>
                <input type="password" class="form-control" name="estudiante_clave_1" pattern="[^\>\<]{7,100}" maxlength="100" required>

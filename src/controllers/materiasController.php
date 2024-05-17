@@ -51,7 +51,7 @@
 				],
 				[
 					"campo_nombre"=>"materia_intensidad_horaria",
-					"campo_marcador"=>":Intensidad horaria",
+					"campo_marcador"=>":Intensidad",
 					"campo_valor"=>$ih
                 ]
                 ];

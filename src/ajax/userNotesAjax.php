@@ -4,23 +4,23 @@
 	require_once "../autoload.php";
 	require_once "../views/inc/Sesion_start.php";
 
-       use controllers\materiasController;
+       use controllers\notesController;
 
 
-	if(isset($_POST['modulo_materia'])){
+	if(isset($_POST['modulo_nota'])){
 
-		$insUsuario = new materiasController();
+		$insUsuario = new notesController();
 
-		if($_POST['modulo_materia']=="registrar"){
-			echo $insUsuario->registrarMateriaControlador();
+		if($_POST['modulo_nota']=="registrar"){
+			echo $insUsuario->registrarNotaControlador();
 		}
 
-		if($_POST['modulo_materia']=="eliminar"){
-			echo $insUsuario->eliminarMateriaControlador();
+		if($_POST['modulo_nota']=="eliminar"){
+			echo $insUsuario->eliminarNotaControlador();
 		}
 
-		if($_POST['modulo_materia']=="actualizar"){
-			echo $insUsuario->actualizarMateriaControlador();
+		if($_POST['modulo_nota']=="actualizar"){
+			echo $insUsuario->actualizarNotaControlador();
 		}
 
 		

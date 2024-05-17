@@ -39,7 +39,7 @@
 			if($registrar_grado->rowCount()==1){
 				$alerta=[
 					"tipo"=>"limpiar",
-					"titulo"=>"grado registrada",
+					"titulo"=>"grado registrado",
 					"texto"=>"El grado ".$nombre." "." se registro con exito",
 					"icono"=>"success"
 				];
@@ -205,7 +205,7 @@
 		
 				$alerta = [
 					"tipo" => "recargar",
-					"titulo" => "grado eliminada",
+					"titulo" => "grado eliminado",
 					"texto" => "El grado " . $datos['grado_nombre'] . " " . "ha sido eliminado del sistema correctamente",
 					"icono" => "success"
 				];
@@ -284,7 +284,7 @@
 
 				$alerta=[
 					"tipo"=>"recargar",
-					"titulo"=>"grado actualizada",
+					"titulo"=>"grado actualizado",
 					"texto"=>"Los datos del grado ".$datos['grado_nombre']." "."se actualizaron correctamente",
 					"icono"=>"success"
 				];

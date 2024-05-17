@@ -1,7 +1,3 @@
-<!-- Editar usuario -->
-
-
-
 <div class="container c-welcome d-flex justify-content-center">
     <div class="container">
         <div class="text-center">

@@ -39,36 +39,65 @@
             <li><a class="dropdown-item" href="<?php echo SERVER_URL."src/user-profile/".$_SESSION['id']."/"; ?>">My profile</a></li>           
             <li><a class="dropdown-item" href="<?php echo SERVER_URL; ?>src/logOut">Logout</a></li>
           </ul>
-        </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?php echo SERVER_URL; ?>src/dashboard">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?php echo SERVER_URL; ?>src/list-user-admin/">Usuarios</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?php echo SERVER_URL; ?>src/list-students/">Estudiantes</a>
-          </li> 
-          <li class="nav-item">
-            <a class="nav-link" href="<?php echo SERVER_URL; ?>src/list-guardians/">Acudientes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?php echo SERVER_URL; ?>src/list-teachers/">Profesores</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?php echo SERVER_URL; ?>src/list-materias/">Materia</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?php echo SERVER_URL; ?>src/list-grades/">Grado</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Notas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Reportes</a>
-          </li>
-          
-        </ul>
+        <li class="nav-item">
+        <a class="nav-link" href="<?php echo SERVER_URL; ?>src/dashboard">Inicio</a>
+    </li>
+<?php if ($_SESSION['rol'] === 'administrador') { ?>
+    <!-- Mostrar solo para administradores -->
+    <li class="nav-item">
+    <a class="nav-link" href="<?php echo SERVER_URL; ?>src/list-guardians/">Acudientes</a>
+</li>
+    <li class="nav-item">
+    <a class="nav-link" href="<?php echo SERVER_URL; ?>src/list-students/">Estudiantes</a>
+</li>
+<li class="nav-item">
+        <a class="nav-link" href="<?php echo SERVER_URL; ?>src/report/">Grado</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="<?php echo SERVER_URL; ?>src/list-materias/">Materia</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="<?php echo SERVER_URL; ?>src/list-notes/">Notas</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="<?php echo SERVER_URL; ?>src/list-teachers/">Profesores</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="<?php echo SERVER_URL; ?>src/report/">Reportes</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="<?php echo SERVER_URL; ?>src/list-user-admin/">Usuarios</a>
+    </li>
+   
+<?php } elseif ($_SESSION['rol'] === 'profesor') { ?>
+    <!-- Mostrar solo para profesores -->
+    <li class="nav-item">
+    <a class="nav-link" href="<?php echo SERVER_URL; ?>src/list-guardians/">Acudientes</a>
+</li>
+    <li class="nav-item">
+    <a class="nav-link" href="<?php echo SERVER_URL; ?>src/list-students/">Estudiantes</a>
+</li>
+    <li class="nav-item">
+        <a class="nav-link" href="<?php echo SERVER_URL; ?>src/list-grades/">Grado</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="<?php echo SERVER_URL; ?>src/list-materias/">Materia</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="<?php echo SERVER_URL; ?>src/list-notes/">Notas</a>
+    </li>
+    
+    
+<?php } elseif ($_SESSION['rol'] === 'estudiante' || $_SESSION['rol'] === 'acudiente') { ?>
+    <!-- Mostrar solo para estudiantes -->
+    
+    <li class="nav-item">
+        <a class="nav-link" href="<?php echo SERVER_URL; ?>src/report/">Reportes</a>
+    </li>
+<?php } ?>
+
+
+</ul>
         <!-- Left links -->
       </div>
       <!-- Collapsible wrapper -->

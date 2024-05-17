@@ -102,7 +102,26 @@
 			return $text;
 		}
 
-
+		public function getAcudientes() {
+			$query = "SELECT *  FROM acudientes";
+			$result = $this->executeQuery($query);
+			return $result->fetchAll(PDO::FETCH_ASSOC);
+		}
+		public function getGrados() {
+			$query = "SELECT *  FROM grados";
+			$result = $this->executeQuery($query);
+			return $result->fetchAll(PDO::FETCH_ASSOC);
+		}
+		public function getMaterias() {
+			$query = "SELECT *  FROM materias";
+			$result = $this->executeQuery($query);
+			return $result->fetchAll(PDO::FETCH_ASSOC);
+		}
+		public function getEstudiantes() {
+			$query = "SELECT *  FROM estudiantes";
+			$result = $this->executeQuery($query);
+			return $result->fetchAll(PDO::FETCH_ASSOC);
+		}
 		/*---------- Funcion verificar datos (expresion regular) ----------*/
 		protected function verifyData($filter,$text){
 			if(preg_match("/^".$filter."$/", $text)){
@@ -174,7 +193,7 @@
                 $sql=$this->conect()->prepare("SELECT * FROM $table WHERE $camp=:ID");
                 $sql->bindParam(":ID",$id);
             }elseif($type=="Normal"){
-                $sql=$this->conect()->prepare("SELECT $camp FROM $table");
+                $sql=$this->conect()->prepare(" SELECT $camp FROM $table ");
             }
             $sql->execute();
 
