@@ -1,6 +1,7 @@
 <?php
- const SERVER_URL="http://164.90.157.170/Academicsoft/";
-//  const SERVER_URL="http://localhost/Academicsoft/";
+const SERVER_URL="http://164.90.157.170/Academicsoft/";
+# host desarrollo:
+  //const SERVER_URL="http://localhost/Academicsoft/";
 
 
 const COMPANY="ACADEMICSOFT";

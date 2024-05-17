@@ -90,7 +90,9 @@
     
 <?php } elseif ($_SESSION['rol'] === 'estudiante' || $_SESSION['rol'] === 'acudiente') { ?>
     <!-- Mostrar solo para estudiantes -->
-    
+    <li class="nav-item">
+        <a class="nav-link" href="<?php echo SERVER_URL; ?>src/list-notes/">Notas</a>
+    </li>
     <li class="nav-item">
         <a class="nav-link" href="<?php echo SERVER_URL; ?>src/report/">Reportes</a>
     </li>
