@@ -1,9 +1,5 @@
    <!-- Lista de Materia -->
    <div class="c-welcome d-flex justify-content-start">
-<?php 
-$usuario_rol = $_SESSION['rol'];
-?>
-
 <div class="container">
   <div class="text-center">
     <h3 class="mt-5">Notas</h3>
@@ -25,11 +21,11 @@ $usuario_rol = $_SESSION['rol'];
 <?php
   use controllers\notesController;
 
-  $instGuardian = new notesController();
+  $instNotes = new notesController();
 
  // Verificar el rol del usuario y llamar al controlador correspondiente
 
-  echo $instGuardian->listarNotaControlador($url[1],15,$url[0],"");
+  echo $instNotes->listarNotaControlador($url[1],15,$url[0],"");
 
   
 ?>

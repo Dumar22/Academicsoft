@@ -1,7 +1,4 @@
 <div class="c-welcome d-flex justify-content-start">
-<?php 
-$usuario_rol = $_SESSION['rol'];
-?>
 
 <div class="container">
   <div class="text-center">
@@ -16,11 +13,11 @@ $usuario_rol = $_SESSION['rol'];
 <?php
   use controllers\notesController;
 
-  $instGuardian = new notesController();
+  $instNotasUser = new notesController();
 
  // Verificar el rol del usuario y llamar al controlador correspondiente
 
-  echo  $instGuardian->listarNotaUsuarioControlador($url[1], 15, $url[0], "");
+  echo  $instNotasUser->listarNotaUsuarioControlador($url[1], 15, $url[0], "");
 
  
   
