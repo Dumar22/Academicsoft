@@ -17,7 +17,7 @@
 
  // Verificar el rol del usuario y llamar al controlador correspondiente
 
-  echo  $instNotasUser->listarNotaUsuarioControlador($url[1], 15, $url[0], "");
+  echo  $instNotasUser->listarNotaUsuarioControlador($url[1],15,$url[0],"");
 
  
   
