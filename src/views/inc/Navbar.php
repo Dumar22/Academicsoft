@@ -51,7 +51,7 @@
     <a class="nav-link" href="<?php echo SERVER_URL; ?>src/list-students/">Estudiantes</a>
 </li>
 <li class="nav-item">
-        <a class="nav-link" href="<?php echo SERVER_URL; ?>src/report/">Grado</a>
+        <a class="nav-link" href="<?php echo SERVER_URL; ?>src/list-grades/">Grado</a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="<?php echo SERVER_URL; ?>src/list-materias/">Materia</a>
@@ -91,7 +91,7 @@
 <?php } elseif ($_SESSION['rol'] === 'estudiante' || $_SESSION['rol'] === 'acudiente') { ?>
     <!-- Mostrar solo para estudiantes -->
     <li class="nav-item">
-        <a class="nav-link" href="<?php echo SERVER_URL; ?>src/list-notes/">Notas</a>
+        <a class="nav-link" href="<?php echo SERVER_URL; ?>src/list-notes-user/">Notas</a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="<?php echo SERVER_URL; ?>src/report/">Reportes</a>
